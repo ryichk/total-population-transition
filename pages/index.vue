@@ -1,65 +1,44 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        total-population-transition
-      </h1>
-      <h2 class="subtitle">
-        都道府県別の総人口推移グラフを表示するSPA
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
+  <section>
+    <v-container pl-5 fluid>
+      <v-layout>
+        <v-btn outline color="indigo">都道府県</v-btn>
+      </v-layout>
+      <v-layout row wrap>
+        <v-flex xs3 sm2 v-for="(prefecture, i) in this.prefectures" :key="i">
+          <v-checkbox
+            v-model="prefecture.prefCode"
+            :label="prefecture.prefName"
+            :input-value="prefecture.prefCode"
+            @change="onChange(prefecture.prefCode)"
+          />
+        </v-flex>
+      </v-layout>
+    </v-container>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import axios from 'axios'
 
 export default {
-  components: {
-    AppLogo
-  }
+  asyncData({params}){
+    return axios
+        .get("https://opendata.resas-portal.go.jp/api/v1/prefectures", {
+          headers: {
+            "X-API-KEY": "LBWtY3kaN34EwSDpoCYYdYk1HQL4YNFoiPimyKeV"
+          }
+        })
+        .then((response)=>{
+          return {
+            prefectures: response.data.result
+          }
+        })
+  },
+
 }
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
 
