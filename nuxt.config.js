@@ -1,9 +1,10 @@
 module.exports = {
+  mode: 'spa',
   /*
   ** Headers of the page
   */
   head: {
-    title: 'total-population-transition',
+    title: '都道府県別の総人口推移',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
