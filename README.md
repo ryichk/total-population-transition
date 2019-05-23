@@ -26,19 +26,15 @@
 
 
 ## 参考
-[RESAS API]
-(https://opendata.resas-portal.go.jp/)
+* [RESAS API](https://opendata.resas-portal.go.jp/)
 
-[RESAS API仕様書] (https://opendata.resas-portal.go.jp/docs/api/v1/index.html)
+* [RESAS API仕様書](https://opendata.resas-portal.go.jp/docs/api/v1/index.html)
 
-[React.js]
-(https://reactjs.org/)
+* [React.js](https://reactjs.org/)
 
-[Highcharts]
-(https://www.highcharts.com/)
+* [Highcharts](https://www.highcharts.com/)
 
-[Recharts.js]
-(http://recharts.org/en-US/)
+* [Recharts.js](http://recharts.org/en-US/)
 
 
 ## Build Setup
