@@ -63,7 +63,7 @@ export default {
           },
           labels: {
             formatter: function () {
-              return this.value + '°';
+              return this.value;
             }
           }
         },
