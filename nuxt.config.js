@@ -1,9 +1,10 @@
 module.exports = {
+  mode: 'spa',
   /*
   ** Headers of the page
   */
   head: {
-    title: 'total-population-transition',
+    title: '都道府県別の総人口推移',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -20,6 +21,15 @@ module.exports = {
   /*
   ** Build configuration
   */
+
+  modules: [
+    '@nuxtjs/vuetify'
+  ],
+
+  plugins: [
+    { src: '~plugins/vue-highcharts.js', ssr: false }
+  ],
+
   build: {
     /*
     ** Run ESLint on save
