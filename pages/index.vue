@@ -7,9 +7,7 @@
       <v-layout row wrap>
         <v-flex xs3 sm2 v-for="(prefecture, i) in this.prefectures" :key="i">
           <v-checkbox
-            v-model="prefecture.prefCode"
             :label="prefecture.prefName"
-            :input-value="prefecture.prefCode"
             @change="onChange(prefecture.prefCode)"
           />
         </v-flex>

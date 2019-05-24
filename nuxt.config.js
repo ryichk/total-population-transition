@@ -26,6 +26,10 @@ module.exports = {
     '@nuxtjs/vuetify'
   ],
 
+  plugins: [
+    { src: '~plugins/vue-highcharts.js', ssr: false }
+  ],
+
   build: {
     /*
     ** Run ESLint on save
