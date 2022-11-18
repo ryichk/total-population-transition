@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.5.1",
     "@nuxtjs/vuetify": "^0.5.5",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "vue2-highcharts": "^1.2.5"
   },
   "devDependencies": {
